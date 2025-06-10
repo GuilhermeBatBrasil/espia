@@ -1,15 +1,24 @@
 import { useState } from "react";
-import IntroScreen from "./components/IntroScreen";
+import FingerprintScanner from "./components/FingerprintsScanner";
+import TerminalChat from "./components/TerminalChat";
 import Dashboard from "./components/Dashboard";
 
-function App() {
-  const [entered, setEntered] = useState(false);
+export default function App() {
+  const [accessGranted, setAccessGranted] = useState(false);
+  const [showTerminal, setShowTerminal] = useState(false);
+
+  const handleAccess = () => {
+    setAccessGranted(true);
+    setTimeout(() => {
+      setShowTerminal(true);
+    }, 4000); // mostra terminal depois de 4s
+  };
+
+  if (!accessGranted) return <FingerprintScanner onAccessGranted={handleAccess} />;
 
   return (
     <div>
-      {entered ? <Dashboard /> : <IntroScreen onEnter={() => setEntered(true)} />}
+      {showTerminal ? <Dashboard /> : <TerminalChat />}
     </div>
   );
 }
-
-export default App;
