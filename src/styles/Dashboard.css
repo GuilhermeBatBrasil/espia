@@ -1,0 +1,41 @@
+.dashboard {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.agent-name {
+  color: #ff69b4;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.missions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.mission-card {
+  background-color: #1a1a1a;
+  padding: 16px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.mission-card:hover {
+  transform: scale(1.05);
+}
+
+.mission-card img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.mission-card h3 {
+  color: #ffb6c1;
+  margin-bottom: 4px;
+}

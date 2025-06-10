@@ -1,0 +1,35 @@
+.intro-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: black;
+  animation: pulse 1.5s infinite;
+  text-align: center;
+}
+
+.intro-title {
+  color: #39ff14;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.intro-button {
+  background-color: #39ff14;
+  color: black;
+  padding: 14px 28px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.intro-button:hover {
+  background-color: #2ddb0d;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
