@@ -2,13 +2,23 @@
   background-color: #000000;
   color: #00ffcc;
   font-family: 'Courier New', monospace;
-  padding: 20px;
-  margin: 20px auto;
+  padding: 1rem;
+  margin: 2rem auto;
   width: 90%;
   max-width: 600px;
-  height: 200px;
+  height: 220px;
   overflow-y: auto;
   border: 2px solid #ff69b4;
   border-radius: 8px;
   box-shadow: 0 0 12px #ff69b4aa;
+  font-size: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .terminal {
+    padding: 0.8rem;
+    height: 180px;
+    font-size: 0.9rem;
+  }
 }

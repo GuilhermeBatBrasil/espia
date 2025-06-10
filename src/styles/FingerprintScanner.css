@@ -7,15 +7,17 @@
   background-color: #0b0b0b;
   color: white;
   text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .fingerprint {
-  font-size: 5rem;
+  font-size: 4rem;
   cursor: pointer;
-  padding: 20px;
+  padding: 1rem;
   border-radius: 50%;
   border: 2px solid #ff69b4;
-  margin-top: 20px;
+  margin-top: 1.5rem;
   transition: transform 0.3s ease;
 }
 
@@ -30,6 +32,22 @@
 }
 
 .scan-status {
-  margin-top: 10px;
+  margin-top: 1rem;
   color: #ff69b4;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .fingerprint {
+    font-size: 3rem;
+    padding: 0.8rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .scan-status {
+    font-size: 0.9rem;
+  }
 }
