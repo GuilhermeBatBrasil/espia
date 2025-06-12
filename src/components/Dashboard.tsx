@@ -49,15 +49,30 @@ const missions = [
 ];
 
 
-type Mission = { id: number; title: string; desc: string; image: string };
+type Mission = typeof missions[number];
 
 export default function Dashboard() {
   const [selectedMission, setSelectedMission] = useState<Mission | null>(null);
 
+  // Escolhe uma missão aleatória em destaque (não fixa, mas pode ser)
+  const featuredMission = missions[Math.floor(Math.random() * missions.length)];
+
   return (
     <div className="dashboard">
-      <h2 className="agent-name">Agente Secreta: Juju Araujo</h2>
+      <h2 className="agent-name">
+        <span className="agent-badge">🕵️‍♀️ Agente Secreta:</span> Juju Araujo
+      </h2>
 
+      <div className="featured-mission">
+        <h3>⭐ Missão em Destaque</h3>
+        <div className="mission-card highlight" onClick={() => setSelectedMission(featuredMission)}>
+          <img src={featuredMission.image} alt={featuredMission.title} />
+          <h3>{featuredMission.title}</h3>
+          <p>{featuredMission.desc}</p>
+        </div>
+      </div>
+
+      <h3 className="mission-list-title">📂 Arquivo de Missões</h3>
       <div className="missions">
         {missions.map((mission) => (
           <div

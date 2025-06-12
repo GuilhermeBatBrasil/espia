@@ -5,20 +5,17 @@ import Dashboard from "./components/Dashboard";
 
 export default function App() {
   const [accessGranted, setAccessGranted] = useState(false);
-  const [showTerminal, setShowTerminal] = useState(false);
+  const [terminalFinished, setTerminalFinished] = useState(false);
 
   const handleAccess = () => {
-    setAccessGranted(true);
-    setTimeout(() => {
-      setShowTerminal(true);
-    }, 4000); // mostra terminal depois de 4s
+    setAccessGranted(true); // ativa TerminalChat
   };
 
   if (!accessGranted) return <FingerprintScanner onAccessGranted={handleAccess} />;
 
-  return (
-    <div>
-      {showTerminal ? <Dashboard /> : <TerminalChat />}
-    </div>
-  );
+  if (!terminalFinished) {
+    return <TerminalChat onComplete={() => setTerminalFinished(true)} />;
+  }
+
+  return <Dashboard />;
 }
